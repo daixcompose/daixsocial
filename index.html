@@ -20,32 +20,32 @@
     body {
       display: grid;
       place-items: center;
-      background-color: #D40000;
       height: 100vh;
+      background-color: transparent;
     }
 
     .wrapper {
-      padding-top: 10px;
       display: inline-flex;
+      padding: 10px;
+      background-color: transparent;
     }
 
     .fill {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 50px;
-      height: 50px;
-      color: #fff;
-      background-color: rgba(255, 255, 255, 0.15);
+      width: 42px;
+      height: 42px;
+      color: #4b4b4b;
+      background-color: transparent;
       border-radius: 50%;
-      margin: 8px;
+      margin: 6px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     .fill:hover {
       transform: scale(1.1);
-      background-color: #fff;
       color: #D40000;
     }
 
@@ -59,6 +59,11 @@
 <body>
   <div class="wrapper">
 
+    <!-- Email -->
+    <div id="email" onclick="navigate(this.id)" class="fill email">
+      <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+    </div>
+
     <!-- Instagram -->
     <div id="instagram" onclick="navigate(this.id)" class="fill instagram">
       <span class="icon"><i class="fab fa-instagram"></i></span>
@@ -67,11 +72,6 @@
     <!-- TikTok -->
     <div id="tiktok" onclick="navigate(this.id)" class="fill tiktok">
       <span class="icon"><i class="fab fa-tiktok"></i></span>
-    </div>
-
-    <!-- Email -->
-    <div id="email" onclick="navigate(this.id)" class="fill email">
-      <span class="icon"><i class="fa-solid fa-envelope"></i></span>
     </div>
 
     <!-- Facebook -->
@@ -88,12 +88,12 @@
 
   <script>
     function navigate(id) {
-      if (id === "instagram") {
+      if (id === "email") {
+        window.open("mailto:daix@daixcompose.com", '_blank').focus();
+      } else if (id === "instagram") {
         window.open("https://instagram.com/daixcompose", '_blank').focus();
       } else if (id === "tiktok") {
         window.open("https://www.tiktok.com/@daixcompose", '_blank').focus();
-      } else if (id === "email") {
-        window.open("mailto:daix@daixcompose.com", '_blank').focus();
       } else if (id === "facebook") {
         window.open("https://www.facebook.com/DaixuanAi/", '_blank').focus();
       } else if (id === "youtube") {
