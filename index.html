@@ -11,43 +11,49 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
   <style>
+    /* Reset everything */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    body {
-      display: grid;
-      place-items: center;
-      height: 30vh;
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
       background-color: transparent;
       font-family: sans-serif;
     }
 
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .wrapper {
-      display: inline-flex;
-      padding: 0px;
-      background-color: transparent;
+      display: flex;
       flex-direction: column;
       align-items: center;
+      background-color: transparent;
     }
 
     .icons {
       display: flex;
-      margin-bottom: 10px;
     }
 
     .fill {
       display: flex;
-      align-items: right;
+      align-items: center;
       justify-content: center;
-      width: 30px;
-      height: 30px;
+      width: 44px;
+      height: 44px;
       background-color: #e0e0e0;
       color: #4b4b4b;
       border-radius: 50%;
-      margin: 5px;
+      margin: 8px;
       cursor: pointer;
       transition: all 0.3s ease;
     }
@@ -59,7 +65,7 @@
     }
 
     .icon {
-      font-size: 1em;
+      font-size: 1.3em;
     }
 
     .refresh-btn {
@@ -70,6 +76,7 @@
       color: #4b4b4b;
       cursor: pointer;
       transition: all 0.3s ease;
+      margin-top: 16px;
     }
 
     .refresh-btn:hover {
@@ -78,7 +85,6 @@
       transform: scale(1.05);
     }
   </style>
-
 </head>
 
 <body>
@@ -118,11 +124,9 @@
     }
 
     function refreshPage() {
-      // Reloads the page
       location.reload();
     }
   </script>
-
 </body>
 
 </html>
