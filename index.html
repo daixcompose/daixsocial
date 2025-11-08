@@ -24,8 +24,7 @@
     .wrapper {
       position: fixed; /* Pin to top */
       top: 10px;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 10px;      /* move to top-left */
       display: inline-flex;
       padding: 10px 0;
       z-index: 1000;
@@ -35,30 +34,30 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 50px;
-      height: 50px;
+      width: 45px;
+      height: 45px;
       color: #fff;
       cursor: pointer;
       margin: 8px;
-      background-color: #D40000; /* Normal color */
+      background-color: #4b4b4b;
       border-radius: 50%;
       transition: background-color 0.3s ease;
     }
 
     .icon {
-      font-size: 1.3em;
+      font-size: 1.1em;
     }
 
-    /* Hover color */
+    /* Hover color for all icons */
     .fill:hover {
-      background-color: #4b4b4b;
+      background-color: #D40000;
     }
   </style>
 </head>
 
 <body>
   <div class="wrapper">
-    <!-- Email -->
+    <!-- Mail -->
     <div id="email" onclick="navigate(this.id)" class="fill email">
       <span class="icon"><i class="fa-solid fa-envelope"></i></span>
     </div>
@@ -72,6 +71,16 @@
     <div id="tiktok" onclick="navigate(this.id)" class="fill tiktok">
       <span class="icon"><i class="fab fa-tiktok"></i></span>
     </div>
+
+    <!-- Facebook -->
+    <div id="facebook" onclick="navigate(this.id)" class="fill facebook">
+      <span class="icon"><i class="fab fa-facebook-f"></i></span>
+    </div>
+
+    <!-- YouTube -->
+    <div id="youtube" onclick="navigate(this.id)" class="fill youtube">
+      <span class="icon"><i class="fab fa-youtube"></i></span>
+    </div>
   </div>
 
   <script>
@@ -84,6 +93,12 @@
       } 
       else if (id === "tiktok") {
         window.open("https://www.tiktok.com/@daixcompose", '_blank').focus();
+      }
+      else if (id === "facebook") {
+        window.open("https://www.facebook.com/daixcompose", '_blank').focus();
+      }
+      else if (id === "youtube") {
+        window.open("https://www.youtube.com/@daixcompose", '_blank').focus();
       }
     }
   </script>
