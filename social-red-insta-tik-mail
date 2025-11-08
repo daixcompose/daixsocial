@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daix Ai | Socials</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      background-color: #D40000;
+      height: 100vh;
+    }
+
+    .wrapper {
+      padding-top: 10px;
+      display: inline-flex;
+    }
+
+    .fill {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      margin: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .fill:hover {
+      transform: scale(1.1);
+      background-color: #fff;
+      color: #D40000;
+    }
+
+    .icon {
+      font-size: 1.4em;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <!-- Instagram -->
+    <div id="instagram" onclick="navigate(this.id)" class="fill instagram">
+      <span class="icon"><i class="fab fa-instagram"></i></span>
+    </div>
+
+    <!-- TikTok -->
+    <div id="tiktok" onclick="navigate(this.id)" class="fill tiktok">
+      <span class="icon"><i class="fab fa-tiktok"></i></span>
+    </div>
+
+    <!-- Email -->
+    <div id="email" onclick="navigate(this.id)" class="fill email">
+      <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+    </div>
+
+  </div>
+
+  <script>
+    function navigate(id) {
+      if (id === "instagram") {
+        window.open("https://instagram.com/daixcompose", '_blank').focus();
+      } else if (id === "tiktok") {
+        window.open("https://www.tiktok.com/@daixcompose", '_blank').focus();
+      } else if (id === "email") {
+        window.open("mailto:daix@daixcompose.com", '_blank').focus();
+      }
+    }
+  </script>
+
+</body>
+
+</html>
