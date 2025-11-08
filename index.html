@@ -1,106 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daix Compose | Socials</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Socials — Daix Compose</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
   <style>
-    * {
+    /* Reset and layout: make everything flush to the top-left with no padding */
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      background: #fff;
+      font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
 
-    body {
-      background-color: #fff;
-      font-family: sans-serif;
-    }
-
+    /* Wrapper pinned to top-left with no offset or padding */
     .wrapper {
-      position: fixed; /* Pin to top */
-      top: 10px;
-      left: 10px;      /* move to top-left */
+      position: fixed;
+      top: 0;
+      left: 0;
       display: inline-flex;
-      padding: 10px 0;
+      gap: 8px;
+      align-items: center;
       z-index: 1000;
+      margin: 0;
+      padding: 0;
+      background: transparent;
     }
 
-    .fill {
-      display: flex;
+    /* Small icon clickable target (compact, not circular) */
+    .social {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 45px;
-      height: 45px;
-      color: #fff;
-      cursor: pointer;
-      margin: 8px;
-      background-color: #4b4b4b;
-      border-radius: 50%;
-      transition: background-color 0.3s ease;
+      width: 34px;            /* clickable area */
+      height: 34px;
+      color: #6f6f6f;
+      text-decoration: none;
+      border-radius: 6px;     /* subtle rounding, remove if you want sharp corners */
+      transition: color .12s ease, background-color .12s ease, transform .08s ease;
+      padding: 0;
+      margin: 0;
+      line-height: 0;
     }
 
-    .icon {
-      font-size: 1.1em;
+    .social .icon {
+      font-size: 16px;        /* small icon size */
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      text-align: center;
     }
 
-    /* Hover color for all icons */
-    .fill:hover {
-      background-color: #D40000;
+    .social:focus {
+      outline: 2px solid #D40000;
+      outline-offset: 3px;
+      border-radius: 6px;
+    }
+
+    /* Unified hover state: all icons use #D40000 on hover */
+    .social:hover {
+      color: #D40000;
+      background: rgba(212,0,0,0.06);
+      transform: translateY(-1px);
+    }
+
+    /* Very small screens: scale down slightly */
+    @media (max-width: 360px) {
+      .social { width: 30px; height: 30px; }
+      .social .icon { font-size: 14px; width: 14px; height: 14px; }
     }
   </style>
 </head>
-
 <body>
-  <div class="wrapper">
-    <!-- Mail -->
-    <div id="email" onclick="navigate(this.id)" class="fill email">
-      <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-    </div>
+  <div class="wrapper" aria-label="Social links">
+    <!-- Email -->
+    <a class="social email" href="mailto:daix@daixcompose.com" aria-label="Email (daix@daixcompose.com)" target="_blank" rel="noopener noreferrer">
+      <span class="icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+    </a>
 
     <!-- Instagram -->
-    <div id="instagram" onclick="navigate(this.id)" class="fill instagram">
-      <span class="icon"><i class="fab fa-instagram"></i></span>
-    </div>
+    <a class="social instagram" href="https://www.instagram.com/daixcompose" aria-label="Instagram (daixcompose)" target="_blank" rel="noopener noreferrer">
+      <span class="icon"><i class="fab fa-instagram" aria-hidden="true"></i></span>
+    </a>
 
     <!-- TikTok -->
-    <div id="tiktok" onclick="navigate(this.id)" class="fill tiktok">
-      <span class="icon"><i class="fab fa-tiktok"></i></span>
-    </div>
+    <a class="social tiktok" href="https://www.tiktok.com/@daixcompose" aria-label="TikTok (daixcompose)" target="_blank" rel="noopener noreferrer">
+      <span class="icon"><i class="fab fa-tiktok" aria-hidden="true"></i></span>
+    </a>
 
     <!-- Facebook -->
-    <div id="facebook" onclick="navigate(this.id)" class="fill facebook">
-      <span class="icon"><i class="fab fa-facebook-f"></i></span>
-    </div>
+    <a class="social facebook" href="https://www.facebook.com/daixcompose" aria-label="Facebook (daixcompose)" target="_blank" rel="noopener noreferrer">
+      <span class="icon"><i class="fab fa-facebook-f" aria-hidden="true"></i></span>
+    </a>
 
     <!-- YouTube -->
-    <div id="youtube" onclick="navigate(this.id)" class="fill youtube">
-      <span class="icon"><i class="fab fa-youtube"></i></span>
-    </div>
+    <a class="social youtube" href="https://www.youtube.com/@daixcompose" aria-label="YouTube (daixcompose)" target="_blank" rel="noopener noreferrer">
+      <span class="icon"><i class="fab fa-youtube" aria-hidden="true"></i></span>
+    </a>
   </div>
-
-  <script>
-    function navigate(id) {
-      if (id === "email") {
-        window.open("mailto:daix@daixcompose.com", '_blank').focus();
-      } 
-      else if (id === "instagram") {
-        window.open("https://www.instagram.com/daixcompose", '_blank').focus();
-      } 
-      else if (id === "tiktok") {
-        window.open("https://www.tiktok.com/@daixcompose", '_blank').focus();
-      }
-      else if (id === "facebook") {
-        window.open("https://www.facebook.com/daixcompose", '_blank').focus();
-      }
-      else if (id === "youtube") {
-        window.open("https://www.youtube.com/@daixcompose", '_blank').focus();
-      }
-    }
-  </script>
 </body>
 </html>
